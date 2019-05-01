@@ -17,11 +17,14 @@ Xilinx recommends using Anaconda2 to operate in a virtual environment:
 `bash`
 2.  Create Virtual Environment  
 `conda create --name ml-suite python=2.7 numpy=1.14.5 x264=20131218 caffe pydot pydot-ng graphviz keras scikit-learn tqdm -c conda-forge`   
+
 3.  Fix symbolic links between pre-compiled Caffe (libcaffe.so), and OpenCV   
       - Note: If you installed anaconda or ml-suite in a custom location, you will need to adjust this. 
       `cd ~/ml-suite/; bash fix_caffe_opencv_symlink.sh`
 4.  Activate Environment   
 `conda activate ml-suite`
+`conda install --no-deps leveldb=1.20=h00d4201_1 -c conda-forge`
+`conda install --no-deps glog=0.3.5=hfc679d8_1 -c conda-forge`
 5.  Verify your environment by importing caffe in python  
 `python -c "import caffe"`
 6.  Install other required python packages
